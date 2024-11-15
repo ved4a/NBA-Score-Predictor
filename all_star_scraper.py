@@ -10,7 +10,7 @@ def get_player_seasons(player_id):
         seasons = [row['SEASON_ID'] for row in stats.get('SeasonTotalsRegularSeason', [])]
         return seasons
     except Exception as e:
-        print(f"Error fetching stats for player ID: {player_id}: {e}.")
+        print(f"Error Fetching Stats for Player ID: {player_id}: {e}.")
         return []
     
 def fetch_player_awards(player_id, retries=3, delay=5):
@@ -32,5 +32,5 @@ def filter_players(player_list, start_season="2020-2021", end_season="2023-2024"
         seasons = get_player_seasons(player["id"])
         if any(start_season <= season <= end_season for season in seasons):
             active_players.append(player)
-            
+
     return active_players
