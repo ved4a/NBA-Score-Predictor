@@ -46,14 +46,14 @@ def is_all_star(award_data, start_season, end_season):
     ]
     return len(all_star_awards) > 0
 
-def fetch_all_stars(player_ids, max_workers=5)
+def fetch_all_stars(player_ids, start_season, end_season, max_workers=5):
     all_star_players = []
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         results = list(executor.map(fetch_player_awards, player_ids))
 
-    for player, award_data in zip(all_players, results):
-        if is_all_star(award_data):
+    for player, award_data in zip(active_players, results):
+        if is_all_star(award_data, start_season, end_season):
             all_star_players.append({
                 "id": player["id"],
                 "full_name": player["full_name"],
