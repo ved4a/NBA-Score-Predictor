@@ -25,7 +25,7 @@ def fetch_player_awards(player_id, retries=3, delay=5):
     return {"error": f"Failed to fetch awards for Player ID {player_id} after {retries} retries."}
 
 # this function can be updated to X years
-def filter_players(player_list, start_season="2020-2021", end_season="2023-2024"):
+def filter_players(player_list, start_season, end_season):
     active_players = []
 
     for player in player_list:
@@ -34,6 +34,17 @@ def filter_players(player_list, start_season="2020-2021", end_season="2023-2024"
             active_players.append(player)
 
     return active_players
+
+def is_all_star(award_data, start_season, end_season):
+    if not award_data or "PlayerAwards" not in award_data:
+        return False
+
+    awards = award_data["PlayerAwards"]
+    all_star_awards = [
+        award for award in awards
+        if "All-Star" in award["DESCRIPTION"] and start_season <= award["SEASON"] <= end_season
+    ]
+    return len(all_star_awards) > 0
 
 def fetch_all_stars(player_ids, max_workers=5)
     all_star_players = []
@@ -50,3 +61,25 @@ def fetch_all_stars(player_ids, max_workers=5)
             })
 
     return all_star_players
+
+if __name__ == "__main__":
+    # Get all players
+    all_players = players.get_players()
+
+    print("Filtering players active between 2020-2023...")
+    active_players = filter_players(all_players)
+
+    # Get player IDs for active players
+    player_ids = [player["id"] for player in active_players]
+
+    print(f"Found {len(active_players)} Players Active Between 2020-2023.")
+    print("Fetching All-Star Players...")
+    start_time = time.time()
+    all_star_players = fetch_all_stars(player_ids, max_workers=10)
+    end_time = time.time()
+
+    print(f"\nFound {len(all_star_players)} All-Star players in {end_time - start_time:.2f} seconds.")
+    
+    # Output the results
+    for player in all_star_players:
+        print(f"Player: {player['full_name']} | Awards: {player['awards']}")
