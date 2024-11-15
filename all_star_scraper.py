@@ -63,23 +63,24 @@ def fetch_all_stars(player_ids, start_season, end_season, max_workers=5):
     return all_star_players
 
 if __name__ == "__main__":
-    # Get all players
+    # user input for seasons for flexibility
+    start_season = input("Enter start season (e.g., 2020-21): ") or "2020-21"
+    end_season = input("Enter end season (e.g., 2023-24): ") or "2023-24"
+
     all_players = players.get_players()
 
-    print("Filtering players active between 2020-2023...")
-    active_players = filter_players(all_players)
+    print(f"Filtering players active between {start_season} and {end_season}...")
+    active_players = filter_players(all_players, start_season, end_season)
 
-    # Get player IDs for active players
     player_ids = [player["id"] for player in active_players]
 
-    print(f"Found {len(active_players)} Players Active Between 2020-2023.")
+    print(f"Found {len(active_players)} Players Active Between {start_season} and {end_season}.")
     print("Fetching All-Star Players...")
     start_time = time.time()
-    all_star_players = fetch_all_stars(player_ids, max_workers=10)
+    all_star_players = fetch_all_stars(player_ids, start_season, end_season, max_workers=10)
     end_time = time.time()
 
     print(f"\nFound {len(all_star_players)} All-Star players in {end_time - start_time:.2f} seconds.")
     
-    # Output the results
     for player in all_star_players:
         print(f"Player: {player['full_name']} | Awards: {player['awards']}")
