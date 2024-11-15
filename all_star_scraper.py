@@ -23,3 +23,14 @@ def fetch_player_awards(player_id, retries=3, delay=5):
             print(f"Error fetching awards for Player ID {player_id} (Attempt {attempt + 1}): {e}")
             time.sleep(delay)
     return {"error": f"Failed to fetch awards for Player ID {player_id} after {retries} retries."}
+
+# this function can be updated to X years
+def filter_players(player_list, start_season="2020-2021", end_season="2023-2024"):
+    active_players = []
+
+    for player in player_list:
+        seasons = get_player_seasons(player["id"])
+        if any(start_season <= season <= end_season for season in seasons):
+            active_players.append(player)
+            
+    return active_players
