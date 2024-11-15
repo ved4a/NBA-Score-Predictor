@@ -34,3 +34,19 @@ def filter_players(player_list, start_season="2020-2021", end_season="2023-2024"
             active_players.append(player)
 
     return active_players
+
+def fetch_all_stars(player_ids, max_workers=5)
+    all_star_players = []
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        results = list(executor.map(fetch_player_awards, player_ids))
+
+    for player, award_data in zip(all_players, results):
+        if is_all_star(award_data):
+            all_star_players.append({
+                "id": player["id"],
+                "full_name": player["full_name"],
+                "awards": award_data
+            })
+
+    return all_star_players
