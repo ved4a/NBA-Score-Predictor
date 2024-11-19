@@ -4,11 +4,25 @@ This is my final project for the course 'Introduction to Machine Learning' taugh
 
 ## Objective
 
-Given a list of All-Star NBA players from the past 4 years, the user can select 2 teams of 5 players of their choosing. This project then aims to predict the final score based on player-aggregated data.
+Given a list of All-Star NBA players from 2000-2023, the user can select 2 teams of 5 players of their choosing. This project then aims to predict the final score based on player-aggregated data.
 
 ## Data Collection
 
-I'll be using data from the [NBA Players Dataset](https://www.kaggle.com/datasets/justinas/nba-players-data), created and maintained by Justinas Cirtautas on Kaggle. It was last updated 1 year ago to account for the 2022-2023 season.
+I've built a web scraper to extract the All-Star Players from the stipulated year range; it scrapes data from [Basketball-Reference.com](https://www.basketball-reference.com/), and returns player names, the year they played, and the team they played for. I'll then use this to create a comprehensive player list that removes any duplicates, and checks how many All-Star games a player has taken part in.
+
+After this, I’ll build another web scraper that finds the following individual player data:
+
+1. y: Points per game
+2. X:
+   1. Offensive Rebound Percentage (ORB%)
+   2. Assists
+   3. Shooting Percentage
+   4. Free Throw Factor
+   5. Number of All-Star Matches Previously Played
+
+X and y will be trained on data from 8 years up to the player’s latest All-Star game, ie: LeBron’s latest All-Star game was in 2023, so performance will be checked from 2015 onwards.
+
+Why 8 years? According to the paper [Understanding High Achievement: The Case for Eminence](https://www.researchgate.net/publication/335431217_Understanding_High_Achievement_The_Case_for_Eminence), the mean career length of an NBA player is 8.2 years.
 
 ## Data Aggregation:
 
@@ -16,24 +30,7 @@ Typically, the averages of each statistic are calculated using the statistics of
 
 1. How many games need to be considered in order to represent a player’s true performance levels?
 2. Is the focus solely on individual player data?
-3. What features are relevant?
 
 Instead of taking the average performance of a player across _n_ games, implementing a weightage system may prove more effective. Players can improve or decline in form as the season progresses, so a simple average may not reflect their improvement or degradation. A potential fix would be to place a higher weightage for the last _y_ games, while applying decaying weight for the rest _x - y_ games.
 
 The NBA has frequent movement of players between teams, even during active seasons. Ultimately, each team is composed of players that determine the strength of each team; there exists a lack of a unifying factor that determines the base power for each team. Thus, the players’ individual performance will be considered in determining their overall strength, and their marginal addition to the user-created team’s strength (aka, how much they contribute to team strength).
-
-Based on similar projects, I was able to narrow down the feature selection list. This list has loosely built upon the [Four Factors](https://www.basketball-reference.com/about/factors.html). Tentatively, the feature list will be:
-
-1. Offensive power
-   1. Points
-   2. Offensive Rebound Percentage (ORB%)
-   3. Assists
-   4. Shooting Percentage
-   5. Free Throw Factor
-2. Defensive power
-   1. Blocks
-   2. Steals
-   3. Defensive Rebound Percentage (DRB%)
-3. Misc.
-   1. Injury Likelihood
-   2. Number of All-Star Matches Previously Played
