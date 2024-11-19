@@ -1,1 +1,622 @@
-
+Player,Year,Team
+Kevin Garnett,2000,West
+Jason Kidd,2000,West
+Tim Duncan,2000,West
+Kobe Bryant,2000,West
+Shaquille O'Neal,2000,West
+Reserves,2000,West
+Rasheed Wallace,2000,West
+Gary Payton,2000,West
+Chris Webber,2000,West
+John Stockton,2000,West
+Michael Finley,2000,West
+David Robinson,2000,West
+Karl Malone,2000,West
+Allen Iverson,2000,East
+Vince Carter,2000,East
+Alonzo Mourning,2000,East
+Eddie Jones,2000,East
+Grant Hill,2000,East
+Reserves,2000,East
+Reggie Miller,2000,East
+Allan Houston,2000,East
+Ray Allen,2000,East
+Glenn Robinson,2000,East
+Dikembe Mutombo,2000,East
+Jerry Stackhouse,2000,East
+Dale Davis,2000,East
+Allen Iverson,2001,East
+Vince Carter,2001,East
+Tracy McGrady,2001,East
+Antonio Davis,2001,East
+Anthony Mason,2001,East
+Reserves,2001,East
+Dikembe Mutombo,2001,East
+Ray Allen,2001,East
+Stephon Marbury,2001,East
+Glenn Robinson,2001,East
+Latrell Sprewell,2001,East
+Jerry Stackhouse,2001,East
+Allan Houston,2001,East
+Kobe Bryant,2001,West
+Jason Kidd,2001,West
+Chris Webber,2001,West
+Tim Duncan,2001,West
+Kevin Garnett,2001,West
+Reserves,2001,West
+Rasheed Wallace,2001,West
+Michael Finley,2001,West
+Gary Payton,2001,West
+Antonio McDyess,2001,West
+David Robinson,2001,West
+Vlade Divac,2001,West
+Karl Malone,2001,West
+Kobe Bryant,2002,West
+Tim Duncan,2002,West
+Kevin Garnett,2002,West
+Chris Webber,2002,West
+Steve Francis,2002,West
+Reserves,2002,West
+Dirk Nowitzki,2002,West
+Steve Nash,2002,West
+Gary Payton,2002,West
+Elton Brand,2002,West
+Peja StojakoviÄ,2002,West
+Wally Szczerbiak,2002,West
+Allen Iverson,2002,East
+Michael Jordan,2002,East
+Dikembe Mutombo,2002,East
+Jason Kidd,2002,East
+Antoine Walker,2002,East
+Reserves,2002,East
+Ray Allen,2002,East
+Tracy McGrady,2002,East
+Paul Pierce,2002,East
+Shareef Abdur-Rahim,2002,East
+Jermaine O'Neal,2002,East
+Alonzo Mourning,2002,East
+Baron Davis,2002,East
+Kevin Garnett,2003,West
+Tim Duncan,2003,West
+Kobe Bryant,2003,West
+Steve Francis,2003,West
+Yao Ming,2003,West
+Reserves,2003,West
+Shaquille O'Neal,2003,West
+Shawn Marion,2003,West
+Dirk Nowitzki,2003,West
+Steve Nash,2003,West
+Gary Payton,2003,West
+Stephon Marbury,2003,West
+Peja StojakoviÄ,2003,West
+Allen Iverson,2003,East
+Tracy McGrady,2003,East
+Michael Jordan,2003,East
+Jermaine O'Neal,2003,East
+Ben Wallace,2003,East
+Reserves,2003,East
+Jason Kidd,2003,East
+Vince Carter,2003,East
+Paul Pierce,2003,East
+Brad Miller,2003,East
+Jamal Mashburn,2003,East
+Antoine Walker,2003,East
+Zydrunas Ilgauskas,2003,East
+Kobe Bryant,2004,West
+Kevin Garnett,2004,West
+Tim Duncan,2004,West
+Steve Francis,2004,West
+Yao Ming,2004,West
+Reserves,2004,West
+Ray Allen,2004,West
+Shaquille O'Neal,2004,West
+Sam Cassell,2004,West
+Peja StojakoviÄ,2004,West
+Dirk Nowitzki,2004,West
+Andrei Kirilenko,2004,West
+Brad Miller,2004,West
+Jermaine O'Neal,2004,East
+Allen Iverson,2004,East
+Ben Wallace,2004,East
+Tracy McGrady,2004,East
+Vince Carter,2004,East
+Reserves,2004,East
+Kenyon Martin,2004,East
+Jason Kidd,2004,East
+Jamaal Magloire,2004,East
+Metta World Peace,2004,East
+Baron Davis,2004,East
+Michael Redd,2004,East
+Paul Pierce,2004,East
+Allen Iverson,2005,East
+LeBron James,2005,East
+Shaquille O'Neal,2005,East
+Vince Carter,2005,East
+Grant Hill,2005,East
+Reserves,2005,East
+Dwyane Wade,2005,East
+Jermaine O'Neal,2005,East
+Zydrunas Ilgauskas,2005,East
+Paul Pierce,2005,East
+Gilbert Arenas,2005,East
+Ben Wallace,2005,East
+Antawn Jamison,2005,East
+Kobe Bryant,2005,West
+Tracy McGrady,2005,West
+Yao Ming,2005,West
+Tim Duncan,2005,West
+Kevin Garnett,2005,West
+Reserves,2005,West
+Ray Allen,2005,West
+Manu GinÃ³bili,2005,West
+Dirk Nowitzki,2005,West
+Amar'e Stoudemire,2005,West
+Steve Nash,2005,West
+Shawn Marion,2005,West
+Rashard Lewis,2005,West
+Dwyane Wade,2006,East
+LeBron James,2006,East
+Allen Iverson,2006,East
+Shaquille O'Neal,2006,East
+Vince Carter,2006,East
+Reserves,2006,East
+Ben Wallace,2006,East
+Rasheed Wallace,2006,East
+Chris Bosh,2006,East
+Chauncey Billups,2006,East
+Paul Pierce,2006,East
+Richard Hamilton,2006,East
+Gilbert Arenas,2006,East
+Steve Nash,2006,West
+Tracy McGrady,2006,West
+Kobe Bryant,2006,West
+Tim Duncan,2006,West
+Yao Ming,2006,West
+Reserves,2006,West
+Tony Parker,2006,West
+Ray Allen,2006,West
+Shawn Marion,2006,West
+Elton Brand,2006,West
+Kevin Garnett,2006,West
+Dirk Nowitzki,2006,West
+Pau Gasol,2006,West
+Kobe Bryant,2007,West
+Tracy McGrady,2007,West
+Dirk Nowitzki,2007,West
+Tim Duncan,2007,West
+Kevin Garnett,2007,West
+Reserves,2007,West
+Carmelo Anthony,2007,West
+Tony Parker,2007,West
+Shawn Marion,2007,West
+Ray Allen,2007,West
+Amar'e Stoudemire,2007,West
+Josh Howard,2007,West
+Mehmet Okur,2007,West
+LeBron James,2007,East
+Dwyane Wade,2007,East
+Chris Bosh,2007,East
+Gilbert Arenas,2007,East
+Shaquille O'Neal,2007,East
+Reserves,2007,East
+Jermaine O'Neal,2007,East
+Dwight Howard,2007,East
+Joe Johnson,2007,East
+Chauncey Billups,2007,East
+Vince Carter,2007,East
+Caron Butler,2007,East
+Richard Hamilton,2007,East
+Dwight Howard,2008,East
+LeBron James,2008,East
+Jason Kidd,2008,East
+Dwyane Wade,2008,East
+Chris Bosh,2008,East
+Reserves,2008,East
+Ray Allen,2008,East
+Chauncey Billups,2008,East
+Richard Hamilton,2008,East
+Rasheed Wallace,2008,East
+Joe Johnson,2008,East
+Paul Pierce,2008,East
+Antawn Jamison,2008,East
+Tim Duncan,2008,West
+Carmelo Anthony,2008,West
+Allen Iverson,2008,West
+Yao Ming,2008,West
+Kobe Bryant,2008,West
+Reserves,2008,West
+Brandon Roy,2008,West
+Chris Paul,2008,West
+Dirk Nowitzki,2008,West
+Amar'e Stoudemire,2008,West
+Steve Nash,2008,West
+Carlos Boozer,2008,West
+David West,2008,West
+Kobe Bryant,2009,West
+Chris Paul,2009,West
+Amar'e Stoudemire,2009,West
+Tim Duncan,2009,West
+Yao Ming,2009,West
+Reserves,2009,West
+Brandon Roy,2009,West
+Tony Parker,2009,West
+Chauncey Billups,2009,West
+Pau Gasol,2009,West
+David West,2009,West
+Dirk Nowitzki,2009,West
+Shaquille O'Neal,2009,West
+Dwight Howard,2009,East
+LeBron James,2009,East
+Dwyane Wade,2009,East
+Kevin Garnett,2009,East
+Allen Iverson,2009,East
+Reserves,2009,East
+Joe Johnson,2009,East
+Rashard Lewis,2009,East
+Paul Pierce,2009,East
+Ray Allen,2009,East
+Devin Harris,2009,East
+Mo Williams,2009,East
+Danny Granger,2009,East
+LeBron James,2010,East
+Dwyane Wade,2010,East
+Dwight Howard,2010,East
+Joe Johnson,2010,East
+Kevin Garnett,2010,East
+Reserves,2010,East
+Chris Bosh,2010,East
+Rajon Rondo,2010,East
+Gerald Wallace,2010,East
+Derrick Rose,2010,East
+Al Horford,2010,East
+David Lee,2010,East
+Paul Pierce,2010,East
+Carmelo Anthony,2010,West
+Dirk Nowitzki,2010,West
+Steve Nash,2010,West
+Amar'e Stoudemire,2010,West
+Tim Duncan,2010,West
+Reserves,2010,West
+Deron Williams,2010,West
+Chauncey Billups,2010,West
+Pau Gasol,2010,West
+Kevin Durant,2010,West
+Zach Randolph,2010,West
+Chris Kaman,2010,West
+Jason Kidd,2010,West
+Kevin Durant,2011,West
+Kobe Bryant,2011,West
+Chris Paul,2011,West
+Carmelo Anthony,2011,West
+Tim Duncan,2011,West
+Reserves,2011,West
+Pau Gasol,2011,West
+Manu GinÃ³bili,2011,West
+Deron Williams,2011,West
+Blake Griffin,2011,West
+Dirk Nowitzki,2011,West
+Russell Westbrook,2011,West
+Kevin Love,2011,West
+LeBron James,2011,East
+Derrick Rose,2011,East
+Amar'e Stoudemire,2011,East
+Dwight Howard,2011,East
+Dwyane Wade,2011,East
+Reserves,2011,East
+Chris Bosh,2011,East
+Rajon Rondo,2011,East
+Joe Johnson,2011,East
+Ray Allen,2011,East
+Paul Pierce,2011,East
+Al Horford,2011,East
+Kevin Garnett,2011,East
+Kevin Durant,2012,West
+Kobe Bryant,2012,West
+Blake Griffin,2012,West
+Chris Paul,2012,West
+Andrew Bynum,2012,West
+Reserves,2012,West
+Russell Westbrook,2012,West
+Kevin Love,2012,West
+Dirk Nowitzki,2012,West
+Marc Gasol,2012,West
+Tony Parker,2012,West
+LaMarcus Aldridge,2012,West
+Steve Nash,2012,West
+Dwyane Wade,2012,East
+LeBron James,2012,East
+Dwight Howard,2012,East
+Carmelo Anthony,2012,East
+Derrick Rose,2012,East
+Reserves,2012,East
+Chris Bosh,2012,East
+Deron Williams,2012,East
+Rajon Rondo,2012,East
+Andre Iguodala,2012,East
+Paul Pierce,2012,East
+Roy Hibbert,2012,East
+Luol Deng,2012,East
+Kevin Durant,2013,West
+Kobe Bryant,2013,West
+Blake Griffin,2013,West
+Chris Paul,2013,West
+Dwight Howard,2013,West
+Reserves,2013,West
+James Harden,2013,West
+Tony Parker,2013,West
+Russell Westbrook,2013,West
+David Lee,2013,West
+Zach Randolph,2013,West
+LaMarcus Aldridge,2013,West
+Tim Duncan,2013,West
+Carmelo Anthony,2013,East
+LeBron James,2013,East
+Dwyane Wade,2013,East
+Chris Bosh,2013,East
+Kevin Garnett,2013,East
+Reserves,2013,East
+Kyrie Irving,2013,East
+Paul George,2013,East
+Luol Deng,2013,East
+Tyson Chandler,2013,East
+Joakim Noah,2013,East
+Jrue Holiday,2013,East
+Brook Lopez,2013,East
+Kyrie Irving,2014,East
+LeBron James,2014,East
+Paul George,2014,East
+Carmelo Anthony,2014,East
+Dwyane Wade,2014,East
+Reserves,2014,East
+Joakim Noah,2014,East
+John Wall,2014,East
+DeMar DeRozan,2014,East
+Paul Millsap,2014,East
+Roy Hibbert,2014,East
+Chris Bosh,2014,East
+Joe Johnson,2014,East
+Kevin Durant,2014,West
+Kevin Love,2014,West
+Blake Griffin,2014,West
+Stephen Curry,2014,West
+James Harden,2014,West
+Reserves,2014,West
+Chris Paul,2014,West
+Dwight Howard,2014,West
+LaMarcus Aldridge,2014,West
+Tony Parker,2014,West
+Anthony Davis,2014,West
+Damian Lillard,2014,West
+Dirk Nowitzki,2014,West
+James Harden,2015,West
+Stephen Curry,2015,West
+Marc Gasol,2015,West
+Klay Thompson,2015,West
+LaMarcus Aldridge,2015,West
+Reserves,2015,West
+Chris Paul,2015,West
+Russell Westbrook,2015,West
+DeMarcus Cousins,2015,West
+Damian Lillard,2015,West
+Tim Duncan,2015,West
+Dirk Nowitzki,2015,West
+Kevin Durant,2015,West
+LeBron James,2015,East
+Carmelo Anthony,2015,East
+John Wall,2015,East
+Pau Gasol,2015,East
+Kyle Lowry,2015,East
+Reserves,2015,East
+Kyrie Irving,2015,East
+Kyle Korver,2015,East
+Paul Millsap,2015,East
+Al Horford,2015,East
+Jeff Teague,2015,East
+Chris Bosh,2015,East
+Jimmy Butler,2015,East
+Stephen Curry,2016,West
+Kobe Bryant,2016,West
+Kawhi Leonard,2016,West
+Kevin Durant,2016,West
+Russell Westbrook,2016,West
+Reserves,2016,West
+James Harden,2016,West
+Klay Thompson,2016,West
+Chris Paul,2016,West
+Anthony Davis,2016,West
+LaMarcus Aldridge,2016,West
+Draymond Green,2016,West
+DeMarcus Cousins,2016,West
+Kyle Lowry,2016,East
+Paul George,2016,East
+Carmelo Anthony,2016,East
+Dwyane Wade,2016,East
+LeBron James,2016,East
+Reserves,2016,East
+John Wall,2016,East
+Paul Millsap,2016,East
+Isaiah Thomas,2016,East
+DeMar DeRozan,2016,East
+Andre Drummond,2016,East
+Pau Gasol,2016,East
+Al Horford,2016,East
+Anthony Davis,2017,West
+James Harden,2017,West
+Stephen Curry,2017,West
+Kevin Durant,2017,West
+Kawhi Leonard,2017,West
+Reserves,2017,West
+Marc Gasol,2017,West
+Russell Westbrook,2017,West
+Klay Thompson,2017,West
+Gordon Hayward,2017,West
+Draymond Green,2017,West
+DeAndre Jordan,2017,West
+DeMarcus Cousins,2017,West
+DeMar DeRozan,2017,East
+Giannis Antetokounmpo,2017,East
+Kyrie Irving,2017,East
+LeBron James,2017,East
+Jimmy Butler,2017,East
+Reserves,2017,East
+Paul George,2017,East
+John Wall,2017,East
+Kemba Walker,2017,East
+Carmelo Anthony,2017,East
+Isaiah Thomas,2017,East
+Kyle Lowry,2017,East
+Paul Millsap,2017,East
+LeBron James,2018,Team LeBron
+Kevin Durant,2018,Team LeBron
+Russell Westbrook,2018,Team LeBron
+Kyrie Irving,2018,Team LeBron
+Anthony Davis,2018,Team LeBron
+Reserves,2018,Team LeBron
+Paul George,2018,Team LeBron
+Andre Drummond,2018,Team LeBron
+Bradley Beal,2018,Team LeBron
+Victor Oladipo,2018,Team LeBron
+Kemba Walker,2018,Team LeBron
+Goran DragiÄ,2018,Team LeBron
+LaMarcus Aldridge,2018,Team LeBron
+James Harden,2018,Team Stephen
+DeMar DeRozan,2018,Team Stephen
+Stephen Curry,2018,Team Stephen
+Giannis Antetokounmpo,2018,Team Stephen
+Joel Embiid,2018,Team Stephen
+Reserves,2018,Team Stephen
+Kyle Lowry,2018,Team Stephen
+Klay Thompson,2018,Team Stephen
+Damian Lillard,2018,Team Stephen
+Draymond Green,2018,Team Stephen
+Karl-Anthony Towns,2018,Team Stephen
+Al Horford,2018,Team Stephen
+LeBron James,2019,Team LeBron
+James Harden,2019,Team LeBron
+Kevin Durant,2019,Team LeBron
+Kyrie Irving,2019,Team LeBron
+Kawhi Leonard,2019,Team LeBron
+Reserves,2019,Team LeBron
+Damian Lillard,2019,Team LeBron
+Klay Thompson,2019,Team LeBron
+Bradley Beal,2019,Team LeBron
+Ben Simmons,2019,Team LeBron
+Karl-Anthony Towns,2019,Team LeBron
+LaMarcus Aldridge,2019,Team LeBron
+Dwyane Wade,2019,Team LeBron
+Anthony Davis,2019,Team LeBron
+Stephen Curry,2019,Team Giannis
+Giannis Antetokounmpo,2019,Team Giannis
+Paul George,2019,Team Giannis
+Joel Embiid,2019,Team Giannis
+Kemba Walker,2019,Team Giannis
+Reserves,2019,Team Giannis
+Khris Middleton,2019,Team Giannis
+Blake Griffin,2019,Team Giannis
+Russell Westbrook,2019,Team Giannis
+Nikola JokiÄ,2019,Team Giannis
+Kyle Lowry,2019,Team Giannis
+D'Angelo Russell,2019,Team Giannis
+Nikola VuÄeviÄ,2019,Team Giannis
+Dirk Nowitzki,2019,Team Giannis
+Kawhi Leonard,2020,Team LeBron
+Anthony Davis,2020,Team LeBron
+LeBron James,2020,Team LeBron
+James Harden,2020,Team LeBron
+Luka DonÄiÄ,2020,Team LeBron
+Reserves,2020,Team LeBron
+Ben Simmons,2020,Team LeBron
+Russell Westbrook,2020,Team LeBron
+Chris Paul,2020,Team LeBron
+Devin Booker,2020,Team LeBron
+Domantas Sabonis,2020,Team LeBron
+Jayson Tatum,2020,Team LeBron
+Nikola JokiÄ,2020,Team LeBron
+Giannis Antetokounmpo,2020,Team Giannis
+Kemba Walker,2020,Team Giannis
+Joel Embiid,2020,Team Giannis
+Pascal Siakam,2020,Team Giannis
+Trae Young,2020,Team Giannis
+Reserves,2020,Team Giannis
+Kyle Lowry,2020,Team Giannis
+Khris Middleton,2020,Team Giannis
+Rudy Gobert,2020,Team Giannis
+Donovan Mitchell,2020,Team Giannis
+Jimmy Butler,2020,Team Giannis
+Bam Adebayo,2020,Team Giannis
+Brandon Ingram,2020,Team Giannis
+Luka DonÄiÄ,2021,Team LeBron
+Stephen Curry,2021,Team LeBron
+Giannis Antetokounmpo,2021,Team LeBron
+Nikola JokiÄ,2021,Team LeBron
+LeBron James,2021,Team LeBron
+Reserves,2021,Team LeBron
+Chris Paul,2021,Team LeBron
+Jaylen Brown,2021,Team LeBron
+Paul George,2021,Team LeBron
+Damian Lillard,2021,Team LeBron
+Domantas Sabonis,2021,Team LeBron
+Rudy Gobert,2021,Team LeBron
+Kyrie Irving,2021,Team Durant
+Bradley Beal,2021,Team Durant
+Kawhi Leonard,2021,Team Durant
+Jayson Tatum,2021,Team Durant
+Zion Williamson,2021,Team Durant
+Reserves,2021,Team Durant
+James Harden,2021,Team Durant
+Donovan Mitchell,2021,Team Durant
+Zach LaVine,2021,Team Durant
+Nikola VuÄeviÄ,2021,Team Durant
+Julius Randle,2021,Team Durant
+Mike Conley,2021,Team Durant
+Stephen Curry,2022,Team LeBron
+LeBron James,2022,Team LeBron
+Giannis Antetokounmpo,2022,Team LeBron
+DeMar DeRozan,2022,Team LeBron
+Nikola JokiÄ,2022,Team LeBron
+Reserves,2022,Team LeBron
+Luka DonÄiÄ,2022,Team LeBron
+Darius Garland,2022,Team LeBron
+Jarrett Allen,2022,Team LeBron
+Fred VanVleet,2022,Team LeBron
+Jimmy Butler,2022,Team LeBron
+Chris Paul,2022,Team LeBron
+Joel Embiid,2022,Team Durant
+Jayson Tatum,2022,Team Durant
+Trae Young,2022,Team Durant
+Ja Morant,2022,Team Durant
+Andrew Wiggins,2022,Team Durant
+Reserves,2022,Team Durant
+Devin Booker,2022,Team Durant
+Dejounte Murray,2022,Team Durant
+LaMelo Ball,2022,Team Durant
+Khris Middleton,2022,Team Durant
+Karl-Anthony Towns,2022,Team Durant
+Rudy Gobert,2022,Team Durant
+Zach LaVine,2022,Team Durant
+Jayson Tatum,2023,Giannis
+Donovan Mitchell,2023,Giannis
+Lauri Markkanen,2023,Giannis
+Ja Morant,2023,Giannis
+Giannis Antetokounmpo,2023,Giannis
+Reserves,2023,Giannis
+Bam Adebayo,2023,Giannis
+Damian Lillard,2023,Giannis
+DeMar DeRozan,2023,Giannis
+Pascal Siakam,2023,Giannis
+Domantas Sabonis,2023,Giannis
+Shai Gilgeous-Alexander,2023,Giannis
+Jrue Holiday,2023,Giannis
+Kyrie Irving,2023,LeBron
+Joel Embiid,2023,LeBron
+Nikola JokiÄ,2023,LeBron
+Luka DonÄiÄ,2023,LeBron
+LeBron James,2023,LeBron
+Reserves,2023,LeBron
+Jaylen Brown,2023,LeBron
+Julius Randle,2023,LeBron
+Paul George,2023,LeBron
+Anthony Edwards,2023,LeBron
+Tyrese Haliburton,2023,LeBron
+De'Aaron Fox,2023,LeBron
+Jaren Jackson Jr.,2023,LeBron

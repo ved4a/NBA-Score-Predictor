@@ -26,6 +26,7 @@ for year in range(START_YEAR, END_YEAR + 1):
     for table in tables:
         caption = table.find("caption")
         team_name = caption.text.strip() if caption else None
+        team_name = team_name.replace(" Table", "")
         print(f"Processing team: {team_name}")
 
         if not team_name:
@@ -45,7 +46,7 @@ for year in range(START_YEAR, END_YEAR + 1):
                     "Team": team_name
                 })
             else:
-                print(f"No player data found in row: {row}")
+                continue
 
 df = pd.DataFrame(all_stars)
 df.to_csv("all_stars_2000_to_2024.csv", index=False)
