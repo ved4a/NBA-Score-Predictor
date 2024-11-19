@@ -19,16 +19,16 @@ for year in range(START_YEAR, END_YEAR + 1):
 
     soup = BeautifulSoup(response.text, "html.parser")
 
-    table = soup.find("table", {"id": "roster"})
-    if table:
-        rows = table.find_all("tr")
-        for row in rows:
-            player_cell = row.find("td", {"data-stat": "player"})
-            if player_cell:
-                player_name = player_cell.text.strip()
-                all_stars.append({"Player": player_name, "Year": year})
-    else:
-        print(f"No roster table found for {year}.")
+    tables = soup.find_all("table", class_="sortable stats_table")
+    for table in tables:
+        team_id = table.get("id")
+        if team_id:
+            rows = table.find("tbody").find_all("tr")
+            for row in rows:
+                player_cell = row.find("td", {"data-stat": "player"})
+                if player_cell:
+                    player_name = player_cell.text.strip()
+                    all_stars.append({"Player": player_name, "Year": year, "Team": team_id})
 
 df = pd.DataFrame(all_stars)
 df.to_csv("all_stars_2000_to_2024.csv", index=False)
