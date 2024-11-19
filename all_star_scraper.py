@@ -31,4 +31,4 @@ for year in range(START_YEAR, END_YEAR + 1):
         print(f"No roster table found for {year}.")
 
 df = pd.DataFrame(all_stars)
-df.to_excel("all_stars_2000_to_2024.xlxs", index=False)
+df.to_csv("all_stars_2000_to_2024.csv", index=False)
