@@ -6,6 +6,10 @@ This is my final project for the course 'Introduction to Machine Learning' taugh
 
 Given a list of All-Star NBA players from the past 4 years, the user can select 2 teams of 5 players of their choosing. This project then aims to predict the final score based on player-aggregated data.
 
+## Data Collection
+
+I'll be using data from the [NBA Players Dataset](https://www.kaggle.com/datasets/justinas/nba-players-data), created and maintained by Justinas Cirtautas on Kaggle. It was last updated 1 year ago to account for the 2022-2023 season.
+
 ## Data Aggregation:
 
 Typically, the averages of each statistic are calculated using the statistics of the previous _n_ games. In order to do this, however, several things must first be considered:
