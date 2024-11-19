@@ -49,4 +49,4 @@ for year in range(START_YEAR, END_YEAR + 1):
                 continue
 
 df = pd.DataFrame(all_stars)
-df.to_csv("all_stars_2000_to_2024.csv", index=False)
+df.to_csv("all_stars_2000_to_2023.csv", index=False)
