@@ -7,6 +7,8 @@ data = pd.read_csv(input_file)
 
 player_column = 'Player'
 
+data = data[data[player_column].str.lower() != "reserves"] # remove 'reserves' as player
+
 player_counts = data[player_column].value_counts().reset_index()
 player_counts.columns = ['Player', 'Appearances']
 
