@@ -13,6 +13,7 @@ for year in range(START_YEAR, END_YEAR + 1):
     print(f"Scraping year: {year}.") # progress 'bar'
     url = BASE_URL.format(year)
     response = requests.get(url)
+
     if response.status_code != 200:
         print(f"Failed to retrieve data for {year}. Status code: {response.status_code}.")
         continue
@@ -23,8 +24,10 @@ for year in range(START_YEAR, END_YEAR + 1):
     print(f"Found {len(tables)} tables for year {year}.")
 
     for table in tables:
-        team_name = table.find("caption").text.strip() if table.find("caption") else None
+        caption = table.find("caption")
+        team_name = caption.text.strip() if caption else None
         print(f"Processing team: {team_name}")
+
         if not team_name:
             print(f"No team name found for table in year {year}. Skipping.")
             continue
@@ -33,16 +36,15 @@ for year in range(START_YEAR, END_YEAR + 1):
         print(f"Found {len(rows)} players in table for team: {team_name}")
 
         for row in rows:
-            player_cell = row.find("td", {"data-stat": "player"})
+            player_cell = row.find("th", {"data-stat": "player"})
             if player_cell:
                 player_name = player_cell.text.strip()
-                # Add to the list
                 all_stars.append({
                     "Player": player_name,
                     "Year": year,
                     "Team": team_name
                 })
-            else
+            else:
                 print(f"No player data found in row: {row}")
 
 df = pd.DataFrame(all_stars)
