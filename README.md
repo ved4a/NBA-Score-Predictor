@@ -4,33 +4,20 @@ This is my final project for the course 'Introduction to Machine Learning' taugh
 
 ## Objective
 
-Given a list of All-Star NBA players from 2000-2023, the user can select 2 teams of 5 players of their choosing. This project then aims to predict the final score based on player-aggregated data.
+Given a list of All-Star NBA players from 2000-2023, the user can select 2 teams of 5 players of their choosing. The model then aims to predict the final score based on player-aggregated data.
 
 ## Data Collection
 
-I've built a web scraper to extract the All-Star Players from the stipulated year range; it scrapes data from [Basketball-Reference.com](https://www.basketball-reference.com/), and returns player names, the year they played, and the team they played for. I'll then use this to create a comprehensive player list that removes any duplicates, and checks how many All-Star games a player has taken part in.
+I built a web scraper to extract the All-Star Players from the stipulated year range; it scrapes data from [Basketball-Reference.com](https://www.basketball-reference.com/), and returns player names, the year they played, and the team they played for. Next, I removed all duplicate names and logged the number of times every player has participated in an All-Star match, along with the latest All-Star match they played. After that, I built a web scraper to find the individual player data for each game in the entire season wherein the player went on to play in an All-Star game.
+For instance, Karl-Anthony Towns' latest All-Star game was in 2022, so the data collected for him was from every game in the regular 2021-2022 season.
 
-After this, I’ll build another web scraper that finds the following individual player data:
+The individual data collected from each player for each game was:
 
-1. y: Points per game
-2. X:
-   1. Offensive Rebound Percentage (ORB%)
-   2. Assists
-   3. Shooting Percentage
-   4. Free Throw Factor
-   5. Number of All-Star Matches Previously Played
+1. Points per game
+2. Field Goal %
+3. Three Pointer Field Goal %
+4. Free Throw %
+5. Offensive Rebounds
+6. Turnovers
 
-X and y will be trained on data from 8 years up to the player’s latest All-Star game, ie: LeBron’s latest All-Star game was in 2023, so performance will be checked from 2015 onwards.
-
-Why 8 years? According to the paper [Understanding High Achievement: The Case for Eminence](https://www.researchgate.net/publication/335431217_Understanding_High_Achievement_The_Case_for_Eminence), the mean career length of an NBA player is 8.2 years.
-
-## Data Aggregation:
-
-Typically, the averages of each statistic are calculated using the statistics of the previous _n_ games. In order to do this, however, several things must first be considered:
-
-1. How many games need to be considered in order to represent a player’s true performance levels?
-2. Is the focus solely on individual player data?
-
-Instead of taking the average performance of a player across _n_ games, implementing a weightage system may prove more effective. Players can improve or decline in form as the season progresses, so a simple average may not reflect their improvement or degradation. A potential fix would be to place a higher weightage for the last _y_ games, while applying decaying weight for the rest _x - y_ games.
-
-The NBA has frequent movement of players between teams, even during active seasons. Ultimately, each team is composed of players that determine the strength of each team; there exists a lack of a unifying factor that determines the base power for each team. Thus, the players’ individual performance will be considered in determining their overall strength, and their marginal addition to the user-created team’s strength (aka, how much they contribute to team strength).
+Why collect game-level data from the latest season? The player made it to the All-Star list in that particular season due to their performance over the entire season- this ensures no degradation of performance. The choice of 'most recent All-Star game' is to maintain a semblance of fairness- it seems the simplest way to compare players from the 2000s to the 2020s.
