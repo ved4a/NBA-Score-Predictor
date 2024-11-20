@@ -52,3 +52,6 @@ for _, row in players.iterrows():
             "ORB": orb,
             "Turnovers": turnovers
         })
+
+df = pd.DataFrame(player_stats)
+df.to_csv("player_stats.csv", index=False)
