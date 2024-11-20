@@ -30,7 +30,7 @@ for _, row in players.iterrows():
             break
 
     if not found:
-        print(f"Failed to retrieve data for {player_name}.")
+        print(f"Failed to retrieve data for {player_name}. Please recheck the URL: {url}.")
         continue
 
     soup = BeautifulSoup(response.text, "html.parser")
