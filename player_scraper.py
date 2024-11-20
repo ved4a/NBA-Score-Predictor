@@ -33,3 +33,22 @@ for _, row in players.iterrows():
         continue
 
     rows = table.find("tbody").find_all("tr")
+
+    for row in rows:
+        points = row.find("td", {"data-stat": "pts"})
+        field_goal_pct = row.find("td", {"data-stat": "fg_pct"})
+        three_pointer_pct = row.find("td", {"data-stat": "fg3_pct"})
+        free_throw_pct = row.find("td", {"data-stat": "ft_pct"})
+        orb = row.find("td", {"data-stat": "orb"})
+        turnovers = row.find("td", {"data-stat": "tov"})
+
+        player_stats.append({
+            "Player": player_name,
+            "Season": last_allstar_year,
+            "Points": points,
+            "Field Goal %": field_goal_pct,
+            "Three Pointer %": three_pointer_pct,
+            "Free Throw %": free_throw_pct,
+            "ORB": orb,
+            "Turnovers": turnovers
+        })
