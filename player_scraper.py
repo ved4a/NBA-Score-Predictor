@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import re
 
 players = pd.read_csv("all_stars_cleaned.csv")
 
@@ -14,15 +15,22 @@ for _, row in players.iterrows():
     last_allstar_year = row['YearLastPlayed']
 
     first_name, last_name = player_name.split(" ", 1)
-    slug = f"{last_name[:5].lower()}{first_name[:2].lower()}01"
-    initial = last_name[0].lower()
+    last_name = re.sub(r"[^a-zA-Z]", "", last_name)  # remove apostrophes / special characters
+    found = False
 
-    url = BASE_URL.format(initial, slug, last_allstar_year)
+    # try more than 1 slug variation
+    for i in range(1, 4):
+        slug = f"{last_name[:5].lower()}{first_name[:2].lower()}{str(i).zfill(2)}"
+        initial = last_name[0].lower()
+        url = BASE_URL.format(initial, slug, last_allstar_year)
 
-    response = requests.get(url)
+        response = requests.get(url)
+        if response.status_code == 200:
+            found = True
+            break
 
-    if response.status_code != 200:
-        print(f"Failed to retrieve data for {player_name}: {url}")
+    if not found:
+        print(f"Failed to retrieve data for {player_name}.")
         continue
 
     soup = BeautifulSoup(response.text, "html.parser")
@@ -45,13 +53,14 @@ for _, row in players.iterrows():
         player_stats.append({
             "Player": player_name,
             "Season": last_allstar_year,
-            "Points": points,
-            "Field Goal %": field_goal_pct,
-            "Three Pointer %": three_pointer_pct,
-            "Free Throw %": free_throw_pct,
-            "ORB": orb,
-            "Turnovers": turnovers
+            "Points": points.text.strip() if points else None,
+            "Field Goal %": field_goal_pct.text.strip() if field_goal_pct else None,
+            "Three Pointer %": three_pointer_pct.text.strip() if three_pointer_pct else None,
+            "Free Throw %": free_throw_pct.text.strip() if free_throw_pct else None,
+            "ORB": orb.text.strip() if orb else None,
+            "Turnovers": turnovers.text.strip() if turnovers else None
         })
 
+# Save data to CSV
 df = pd.DataFrame(player_stats)
 df.to_csv("player_stats.csv", index=False)
