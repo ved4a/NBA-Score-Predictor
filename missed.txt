@@ -1,14 +1,2 @@
-No stats table found for Anthony Davis . Skipping.
-No stats table found for Antoine Walker . Skipping.
-No stats table found for D'Angelo Russell . Skipping.
-No stats table found for David Lee . Skipping.
-No stats table found for Eddie Jones . Skipping.
-No stats table found for Isaiah Thomas . Skipping.
-No stats table found for Jaren Jackson Jr . Skipping.
-No stats table found for Jaylen Brown . Skipping.
-No stats table found for Joe Johnson . Skipping.
-No stats table found for Kemba Walker . Skipping.
-No stats table found for Mo Williams . Skipping.
-No stats table found for Rashard Lewis . Skipping.
-No stats table found for Ray Allen . Skipping.
-No stats table found for Wally Szczerbiak . Skipping.
+Failed to retrieve data for D'Angelo Russell. Please recheck the slugs.
+Failed to retrieve data for Mo Williams. Please recheck the slugs.
