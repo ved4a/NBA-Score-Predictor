@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import re
+import time, random
 
 players = pd.read_csv("all_stars_cleaned.csv")
 
@@ -28,6 +29,8 @@ for _, row in players.iterrows():
         if response.status_code == 200:
             found = True
             break
+    
+    time.sleep(random.uniform(1, 3))
 
     if not found:
         print(f"Failed to retrieve data for {player_name}. Please recheck the URL: {url}.")
