@@ -4,7 +4,7 @@ import pandas as pd
 import re
 import time, random
 
-players = pd.read_csv("all_stars_cleaned.csv")
+players = pd.read_csv("missed_players.csv")
 
 BASE_URL = "https://www.basketball-reference.com/players/{}/{}/gamelog/{}"
 
@@ -66,4 +66,4 @@ for _, row in players.iterrows():
 
 # Save data to CSV
 df = pd.DataFrame(player_stats)
-df.to_csv("player_stats.csv", index=False)
+df.to_csv("missed_player_stats.csv", index=False)
