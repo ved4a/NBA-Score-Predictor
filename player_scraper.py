@@ -2,9 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import re
+import time
+import random
 from concurrent.futures import ThreadPoolExecutor
 
-players = pd.read_csv("all_stars_cleaned.csv")
+players = pd.read_csv("first.csv")
 
 BASE_URL = "https://www.basketball-reference.com/players/{}/{}/gamelog/{}"
 
@@ -27,6 +29,7 @@ def fetch_player_stats(row):
 
         try:
             response = requests.get(url)
+            time.sleep(random.uniform(1, 3))
             if response.status_code != 200:
                 continue
 
@@ -94,4 +97,4 @@ with ThreadPoolExecutor(max_workers=5) as executor:
 player_stats = [item for sublist in all_stats for item in sublist]
 
 df = pd.DataFrame(player_stats)
-df.to_csv("player_stats.csv", index=False)
+df.to_csv("first_stats.csv", index=False)
