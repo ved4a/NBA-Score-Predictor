@@ -37,11 +37,23 @@ for _, row in players.iterrows():
 
             for row in rows:
                 points = row.find("td", {"data-stat": "pts"})
+                field_goals = row.find("td", {"data-stat": "fg"})
+                field_goal_attempts = row.find("td", {"data-stat": "fga"})
                 field_goal_pct = row.find("td", {"data-stat": "fg_pct"})
+                three_pointers = row.find("td", {"data-stat": "fg3"})
+                three_pointer_attempts = row.find("td", {"data-stat": "fg3a"})
                 three_pointer_pct = row.find("td", {"data-stat": "fg3_pct"})
+                free_throws = row.find("td", {"data-stat": "ft"})
+                free_throw_attempts = row.find("td", {"data-stat": "fta"})
                 free_throw_pct = row.find("td", {"data-stat": "ft_pct"})
-                orb = row.find("td", {"data-stat": "orb"})
+                orb = row.find("td", {"data-stat": "orb"}) # offensive rebounds
+                drb = row.find("td", {"data-stat": "drb"}) # defensive rebounds
+                trb = row.find("td", {"data-stat": "trb"}) # total rebounds
+                assists = row.find("td", {"data-stat": "ast"})
+                blocks = row.find("td", {"data-stat": "blk"})
+                steals = row.find("td", {"data-stat": "stl"})
                 turnovers = row.find("td", {"data-stat": "tov"})
+                personal_fouls = row.find("td", {"data-stat": "pf"})
 
                 player_stats.append({
                     "Player": player_name,
