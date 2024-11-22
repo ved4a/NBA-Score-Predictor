@@ -72,6 +72,9 @@ def fetch_player_stats(row):
                         "ORB": orb.text.strip() if orb else None,
                         "DRB": drb.text.strip() if drb else None,
                         "TRB": trb.text.strip() if trb else None,
+                        "Assists": assists.text.strip() if assists else None,
+                        "Blocks": blocks.text.strip() if blocks else None,
+                        "Steals": steals.text.strip() if steals else None,
                         "Turnovers": turnovers.text.strip() if turnovers else None,
                         "Personal Fouls": personal_fouls.text.strip() if personal_fouls else None
                     })
