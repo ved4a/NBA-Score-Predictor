@@ -59,11 +59,20 @@ for _, row in players.iterrows():
                     "Player": player_name,
                     "Season": last_allstar_year,
                     "Points": points.text.strip() if points else None,
-                    "Field Goal %": field_goal_pct.text.strip() if field_goal_pct else None,
-                    "Three Pointer %": three_pointer_pct.text.strip() if three_pointer_pct else None,
-                    "Free Throw %": free_throw_pct.text.strip() if free_throw_pct else None,
+                    "Field Goals": field_goals.text.strip() if field_goals else None,
+                    "FG Attempts": field_goal_attempts.text.strip() if field_goal_attempts else None,
+                    "FG%": field_goal_pct.text.strip() if field_goal_pct else None,
+                    "Three Pointers": three_pointers.text.strip() if three_pointers else None,
+                    "3P Attempts": three_pointer_attempts.text.strip() if three_pointer_attempts else None,
+                    "3P%": three_pointer_pct.text.strip() if three_pointer_pct else None,
+                    "Free Throws": free_throws.text.strip() if free_throws else None,
+                    "FT Attempts": free_throw_attempts.text.strip() if free_throw_attempts else None,
+                    "FT%": free_throw_pct.text.strip() if free_throw_pct else None,
                     "ORB": orb.text.strip() if orb else None,
-                    "Turnovers": turnovers.text.strip() if turnovers else None
+                    "DRB": drb.text.strip() if drb else None,
+                    "TRB": trb.text.strip() if trb else None,
+                    "Turnovers": turnovers.text.strip() if turnovers else None,
+                    "Personal Fouls": personal_fouls.text.strip() if personal_fouls else None
                 })
             break
 
