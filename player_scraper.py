@@ -6,7 +6,7 @@ import time
 import random
 from concurrent.futures import ThreadPoolExecutor
 
-players = pd.read_csv("first.csv")
+players = pd.read_csv("second.csv")
 
 BASE_URL = "https://www.basketball-reference.com/players/{}/{}/gamelog/{}"
 
@@ -97,4 +97,4 @@ with ThreadPoolExecutor(max_workers=5) as executor:
 player_stats = [item for sublist in all_stats for item in sublist]
 
 df = pd.DataFrame(player_stats)
-df.to_csv("first_stats.csv", index=False)
+df.to_csv("second_stats.csv", index=False)
