@@ -9,17 +9,20 @@ stats_columns = [
     "Turnovers", "Personal Fouls"
 ]
 
-# calc high, low, avg of each stat
-def calculate_high_low_average(group):
-    result = {}
+results = []
+
+for player in df['Player'].unique():
+    player_data = df[df['Player'] == player]
+    result = {"Player": player}
+    
     for stat in stats_columns:
-        result[f"Highest {stat}"] = group[stat].max()
-        result[f"Lowest {stat}"] = group[stat].min()
-        result[f"Average {stat}"] = group[stat].mean()
-    return pd.Series(result)
+        result[f"Highest {stat}"] = player_data[stat].max()
+        result[f"Lowest {stat}"] = player_data[stat].min()
+        result[f"Avg {stat}"] = player_data[stat].mean()
+    
+    results.append(result)
 
-# group by player, apply calculation
-high_low_stats = df.groupby("Player").apply(calculate_high_low_average).reset_index()
+high_low_avg_stats = pd.DataFrame(results)
 
-high_low_stats.to_csv("player_stats_HLA.csv", index=False)
-print("Highest, lowest, and average stats calculated and saved to CSV.")
+high_low_avg_stats.to_csv("player_HLA_stats.csv", index=False)
+print("High, low, and average stats calculated and saved to 'player_HLA_stats.csv'")
