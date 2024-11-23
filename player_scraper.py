@@ -97,4 +97,4 @@ with ThreadPoolExecutor(max_workers=5) as executor:
 player_stats = [item for sublist in all_stats for item in sublist]
 
 df = pd.DataFrame(player_stats)
-df.to_csv("missed_player_stats.csv", index=False)
+df.to_csv("missed_stats.csv", index=False)
