@@ -1,4 +1,5 @@
 import pandas as pd
+import math
 
 df = pd.read_csv("player_stats.csv")
 
@@ -18,7 +19,10 @@ for player in df['Player'].unique():
     for stat in stats_columns:
         result[f"Highest {stat}"] = player_data[stat].max()
         result[f"Lowest {stat}"] = player_data[stat].min()
-        result[f"Avg {stat}"] = player_data[stat].mean()
+
+        # skip NaN and apply floor function to get avg points
+        stat_mean = player_data[stat].mean(skipna=True)
+        result[f"{stat} Avg"] = math.floor(stat_mean) if not pd.isna(stat_mean) else 0
     
     results.append(result)
 
