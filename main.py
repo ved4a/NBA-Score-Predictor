@@ -69,14 +69,18 @@ for idx, player in enumerate(players):
 
         # root mean squared error
         mse = mean_squared_error(y_test, y_pred)
-        player_results[name] = {'model': model, 'mse': mse}
+        r2 = model.score(X_test, y_test) # R^2
+        player_results[name] = {'model': model, 'mse': mse, 'r2': r2}
+
+        print(f"Model: {name} | MSE: {mse:.4f} | R^2: {r2:.4f}")
 
     # identify the best model for each lpayer
     best_model_name = min(player_results, key=lambda x: player_results[x]['mse'])
     results[player] = {
         'best_model': best_model_name,
         'model': player_results[best_model_name]['model'],
-        'mse': player_results[best_model_name]['mse']
+        'mse': player_results[best_model_name]['mse'],
+        'r2': player_results[best_model_name]['r2']
     }
     print(f"Best model for {player}: {best_model_name} (MSE: {results[player]['mse']:.4f})")
 
