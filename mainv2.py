@@ -40,7 +40,7 @@ for idx, player in enumerate(players):
         continue
 
     # check variance in data
-    print(f"Variance in targer for {player}: {y.var()}")
+    print(f"Variance in target for {player}: {y.var()}")
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
@@ -68,16 +68,16 @@ for idx, player in enumerate(players):
         print(f"Predictions for {player} using {name}: {y_pred}")
 
         # root mean squared error
-        rmse = np.sqrt(mean_squared_error(y_test, y_pred))
-        player_results[name] = {'model': model, 'rmse': rmse}
+        mse = mean_squared_error(y_test, y_pred)
+        player_results[name] = {'model': model, 'mse': mse}
 
     # identify the best model for each lpayer
-    best_model_name = min(player_results, key=lambda x: player_results[x]['rmse'])
+    best_model_name = min(player_results, key=lambda x: player_results[x]['mse'])
     results[player] = {
         'best_model': best_model_name,
         'model': player_results[best_model_name]['model'],
-        'rmse': player_results[best_model_name]['rmse']
+        'mse': player_results[best_model_name]['mse']
     }
-    print(f"Best model for {player}: {best_model_name} (RMSE: {results[player]['rmse']:.4f})")
+    print(f"Best model for {player}: {best_model_name} (MSE: {results[player]['mse']:.4f})")
 
-print("Processing complete. All players have been evaluated :).")
+print("Processing complete. All players have been evaluated :)")
