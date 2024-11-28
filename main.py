@@ -16,9 +16,27 @@ data = pd.concat([current_season_data, previous_season_data])
 X = data.drop(columns=["Points", "Player", "Season"])
 y = data["Points"]
 
-# drop rows w/ NaN vals
-X = X.dropna()
-y = y.loc[X.index]
+# check initial shape
+print(f"Initial shape of X: {X.shape}")
+print(f"Initial shape of y: {y.shape}")
+
+# combine into 1 df
+data_cleaned = pd.concat([X, y], axis=1)
+
+# clean combined df of NaN values
+data_cleaned = data_cleaned.dropna()
+
+# reset X and y into different dfs
+X = data_cleaned.drop(columns=["Points"])
+y = data_cleaned["Points"]
+
+# reset indices to ensure matching
+X = X.reset_index(drop=True)
+y = y.reset_index(drop=True)
+
+# check shape after cleaning
+print(f"Shape of X after cleaning: {X.shape}")
+print(f"Shape of y after cleaning: {y.shape}")
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
@@ -46,6 +64,6 @@ def evaluate_model(model_name, y_true, y_pred):
     r2 = r2_score(y_true, y_pred)
     print(f"{model_name} - MSE: {mse:.2f}, R²: {r2:.2f}")
 
-evaluate_model("Linear Regression", y_test, linear_predictor)
-evaluate_model("Random Forest", y_test, rf_predictor)
-evaluate_model("XGBoost", y_test, xgb_predictor)
+# evaluate_model("Linear Regression", y_test, linear_predictor)
+# evaluate_model("Random Forest", y_test, rf_predictor)
+# evaluate_model("XGBoost", y_test, xgb_predictor)
