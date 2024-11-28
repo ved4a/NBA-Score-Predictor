@@ -13,7 +13,8 @@ previous_season_data = pd.read_csv("prev_szn_data.csv")
 
 data = pd.concat([current_season_data, previous_season_data])
 
-X = data.drop(columns=["Points", "Player", "Season"])
+# remove dependent features
+X = data.drop(columns=["Points", "Player", "Season", "FG%", "3P%", "FT%", "TRB"])
 y = data["Points"]
 
 # check initial shape
