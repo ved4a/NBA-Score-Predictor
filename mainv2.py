@@ -40,7 +40,7 @@ for idx, player in enumerate(players):
         continue
 
     # check variance in data
-    print(f"Variance in target for {player}: {y.var()}")
+    # print(f"Variance in target for {player}: {y.var()}")
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
@@ -64,8 +64,8 @@ for idx, player in enumerate(players):
         y_pred = model.predict(X_test)
 
         # compare predictions with actual values
-        print(f"y_test for {player}: {y_test.values}")
-        print(f"Predictions for {player} using {name}: {y_pred}")
+        # print(f"y_test for {player}: {y_test.values}")
+        # print(f"Predictions for {player} using {name}: {y_pred}")
 
         # root mean squared error
         mse = mean_squared_error(y_test, y_pred)
