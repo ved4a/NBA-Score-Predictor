@@ -13,7 +13,7 @@ previous_season_data = pd.read_csv("prev_szn_data.csv")
 
 data = pd.concat([current_season_data, previous_season_data])
 
-X = data.drop(columns=["Points"])
+X = data.drop(columns=["Points", "Player", "Season"])
 y = data["Points"]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
