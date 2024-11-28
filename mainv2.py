@@ -12,7 +12,7 @@ from xgboost import XGBRegressor
 data = pd.read_csv('player_stats.csv')
 
 # remove dependent columns
-data = data.drop(columns=['3P%', 'FG%', 'FT%', 'TRB'])
+data = data.drop(columns=['3P%', 'FG%', 'FT%', 'TRB', 'Season'])
 
 # group by players
 players = data['Player'].unique()
