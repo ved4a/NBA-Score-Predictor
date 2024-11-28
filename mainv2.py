@@ -20,11 +20,14 @@ players = data['Player'].unique()
 results = {}
 
 # iterate through each player
-for player in players:
+for idx, player in enumerate(players):
+    print(f"Processing player {idx + 1}/{len(players)}: {player}")
+
     player_data = data[data['Player'] == player]
     X = player_data.drop(columns=['Player', 'Points'])
     y = player_data['Points']
 
+    # drop NaN values
     data_cleaned = pd.concat([X, y], axis=1).dropna()
 
     X = data_cleaned.drop(columns=["Points"]).reset_index(drop=True)
@@ -58,3 +61,6 @@ for player in players:
         'model': player_results[best_model_name]['model'],
         'rmse': player_results[best_model_name]['rmse']
     }
+    print(f"Best model for {player}: {best_model_name} (RMSE: {results[player]['rmse']:.4f})")
+
+print("Processing complete. All players have been evaluated :).")
