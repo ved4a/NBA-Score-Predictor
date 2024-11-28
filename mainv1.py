@@ -9,9 +9,6 @@ import xgboost as xgb
 
 from sklearn.metrics import mean_squared_error, r2_score
 
-current_season_data = pd.read_csv("current_szn_data.csv")
-previous_season_data = pd.read_csv("prev_szn_data.csv")
-
 data = pd.concat([current_season_data, previous_season_data])
 
 # remove dependent features
