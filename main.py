@@ -18,3 +18,14 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
+
+# models
+linear_model = LinearRegression()
+random_forest = RandomForestRegressor(random_state = 42)
+xg_boost = xgb.XGBRegressor(random_state = 42)
+
+# training
+linear_model.fit(X_train_scaled, y_train)
+random_forest.fit(X_train, y_train)
+xg_boost.fit(X_train, y_train)
+
