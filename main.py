@@ -1,6 +1,9 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
+import xgboost as xgb
 
 current_season_data = pd.read_csv("current_szn_data.csv")
 previous_season_data = pd.read_csv("prev_szn_data.csv")
