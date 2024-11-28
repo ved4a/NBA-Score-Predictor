@@ -25,12 +25,13 @@ for idx, player in enumerate(players):
     print(f"Processing player {idx + 1}/{len(players)}: {player}")
 
     player_data = data[data['Player'] == player]
-    X = player_data.drop(columns=['Player', 'Points'])
-    y = player_data['Points']
+    X = player_data.drop(columns=['Player', 'Points']) # don't want to check this
+    y = player_data['Points'] # y value
 
     # drop NaN values
     data_cleaned = pd.concat([X, y], axis=1).dropna()
 
+    # get X and y back
     X = data_cleaned.drop(columns=["Points"]).reset_index(drop=True)
     y = data_cleaned["Points"].reset_index(drop=True)
 
@@ -39,11 +40,10 @@ for idx, player in enumerate(players):
         print(f"Skipping {player}: Insufficient data.")
         continue
 
-    # check variance in data
-    # print(f"Variance in target for {player}: {y.var()}")
-
+    # split into train and test
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
+    # scale for linear regression
     scaler = StandardScaler()
     X_train = scaler.fit_transform(X_train)
     X_test = scaler.fit_transform(X_test)
@@ -63,40 +63,12 @@ for idx, player in enumerate(players):
         # predicting on test data
         y_pred = model.predict(X_test)
 
-        # compare predictions with actual values
-        # print(f"y_test for {player}: {y_test.values}")
-        # print(f"Predictions for {player} using {name}: {y_pred}")
-
-        # root mean squared error
+        # check accuracy
         mse = mean_squared_error(y_test, y_pred)
         r2 = model.score(X_test, y_test) # R^2
+
         player_results[name] = {'model': model, 'mse': mse, 'r2': r2}
 
         print(f"Model: {name} | MSE: {mse:.4f} | R^2: {r2:.4f}")
 
-    # identify the best model for each lpayer
-    best_model_name = min(player_results, key=lambda x: player_results[x]['mse'])
-    results[player] = {
-        'best_model': best_model_name,
-        'model': player_results[best_model_name]['model'],
-        'mse': player_results[best_model_name]['mse'],
-        'r2': player_results[best_model_name]['r2']
-    }
-    print(f"Best model for {player}: {best_model_name} (MSE: {results[player]['mse']:.4f})")
-
 print("Processing complete. All players have been evaluated :)")
-
-results_list = []
-
-for player, result in results.items():
-    results_list.append({
-        'Player': player,
-        'Best Model': result['best_model'],
-        'MSE': result['mse'],
-        'R^2': result['r2']
-    })
-
-results_df = pd.DataFrame(results_list)
-
-results_df.to_csv('player_model_results.csv', index=False)
-print("Results saved to player_model_results.csv")
