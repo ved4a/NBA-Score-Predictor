@@ -1,9 +1,12 @@
 import pandas as pd
+
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 import xgboost as xgb
+from sklearn.metrics import mean_squared_error, r2_score
 
 current_season_data = pd.read_csv("current_szn_data.csv")
 previous_season_data = pd.read_csv("prev_szn_data.csv")
@@ -29,3 +32,16 @@ linear_model.fit(X_train_scaled, y_train)
 random_forest.fit(X_train, y_train)
 xg_boost.fit(X_train, y_train)
 
+# evaluation
+linear_predictor = linear_model.predict(X_test_scaled)
+rf_predictor = random_forest.predict(X_test)
+xgb_predictor = xg_boost.predict(X_test)
+
+def evaluate_model(model_name, y_true, y_pred):
+    mse = mean_squared_error(y_true, y_pred)
+    r2 = r2_score(y_true, y_pred)
+    print(f"{model_name} - MSE: {mse:.2f}, R²: {r2:.2f}")
+
+evaluate_model("Linear Regression", y_test, linear_predictor)
+evaluate_model("Random Forest", y_test, rf_predictor)
+evaluate_model("XGBoost", y_test, xgb_predictor)
