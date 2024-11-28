@@ -25,14 +25,10 @@ for player in players:
     X = player_data.drop(columns=['Player', 'Points'])
     y = player_data['Points']
 
-    data_cleaned = pd.concat([X, y], axis=1)
-    data_cleaned = data_cleaned.dropna()
+    data_cleaned = pd.concat([X, y], axis=1).dropna()
 
-    X = data_cleaned.drop(columns=["Points"])
-    y = data_cleaned["Points"]
-
-    X = X.reset_index(drop=True)
-    y = y.reset_index(drop=True)
+    X = data_cleaned.drop(columns=["Points"]).reset_index(drop=True)
+    y = data_cleaned["Points"].reset_index(drop=True)
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
