@@ -34,10 +34,19 @@ for idx, player in enumerate(players):
     X = data_cleaned.drop(columns=["Points"]).reset_index(drop=True)
     y = data_cleaned["Points"].reset_index(drop=True)
 
-    scaler = StandardScaler()
-    X_scaled = scaler.fit_transform(X)
+    # in case of lack of data
+    if len(X) < 10:
+        print(f"Skipping {player}: Insufficient data.")
+        continue
 
-    X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
+    # check variance in data
+    print(f"Variance in targer for {player}: {y.var()}")
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    scaler = StandardScaler()
+    X_train = scaler.fit_transform(X_train)
+    X_test = scaler.fit_transform(X_test)
 
     models = {
         'Linear Regression': LinearRegression(),
@@ -53,6 +62,10 @@ for idx, player in enumerate(players):
 
         # predicting on test data
         y_pred = model.predict(X_test)
+
+        # compare predictions with actual values
+        print(f"y_test for {player}: {y_test.values}")
+        print(f"Predictions for {player} using {name}: {y_pred}")
 
         # root mean squared error
         rmse = np.sqrt(mean_squared_error(y_test, y_pred))
