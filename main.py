@@ -50,8 +50,8 @@ for idx, player in enumerate(players):
 
     # Define models
     models = {
-        'Ridge Regression': Ridge(alpha=1.0),
-        'Lasso Regression': Lasso(alpha=0.1),
+        'Ridge Regression': Ridge(alpha=1.0, random_state=42),
+        'Lasso Regression': Lasso(alpha=0.1, random_state=42),
         'Random Forest': RandomForestRegressor(random_state=42),
         'XGBoost': XGBRegressor(random_state=42)
     }
