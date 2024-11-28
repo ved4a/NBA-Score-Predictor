@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error
 
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import Ridge, Lasso
 from sklearn.ensemble import RandomForestRegressor
 from xgboost import XGBRegressor
 
@@ -46,10 +46,12 @@ for idx, player in enumerate(players):
     # scale for linear regression
     scaler = StandardScaler()
     X_train = scaler.fit_transform(X_train)
-    X_test = scaler.fit_transform(X_test)
+    X_test = scaler.transform(X_test)
 
     models = {
-        'Linear Regression': LinearRegression(),
+        'Ridge Regression': Ridge(alpha=1.0),
+        'Lasso Regression': Lasso(alpha=0.1),
+        # 'Linear Regression': LinearRegression(),
         'Random Forest': RandomForestRegressor(random_state=42),
         'XGBoost': XGBRegressor(random_state=42)
     }
@@ -70,5 +72,5 @@ for idx, player in enumerate(players):
         player_results[name] = {'model': model, 'mse': mse, 'r2': r2}
 
         print(f"Model: {name} | MSE: {mse:.4f} | R^2: {r2:.4f}")
-
+        
 print("Processing complete. All players have been evaluated :)")
