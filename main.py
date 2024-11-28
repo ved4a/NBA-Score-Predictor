@@ -85,3 +85,18 @@ for idx, player in enumerate(players):
     print(f"Best model for {player}: {best_model_name} (MSE: {results[player]['mse']:.4f})")
 
 print("Processing complete. All players have been evaluated :)")
+
+results_list = []
+
+for player, result in results.items():
+    results_list.append({
+        'Player': player,
+        'Best Model': result['best_model'],
+        'MSE': result['mse'],
+        'R^2': result['r2']
+    })
+
+results_df = pd.DataFrame(results_list)
+
+results_df.to_csv('player_model_results.csv', index=False)
+print("Results saved to player_model_results.csv")
