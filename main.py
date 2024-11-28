@@ -16,6 +16,10 @@ data = pd.concat([current_season_data, previous_season_data])
 X = data.drop(columns=["Points", "Player", "Season"])
 y = data["Points"]
 
+# drop rows w/ NaN vals
+X = X.dropna()
+y = y.loc[X.index]
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 scaler = StandardScaler()
