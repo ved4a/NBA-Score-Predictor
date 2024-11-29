@@ -20,9 +20,10 @@ players = data['Player'].unique()
 # This will hold the best model for each player
 best_models = []
 
+print("Processing players...")
 # Iterate through each player to train models
 for idx, player in enumerate(players):
-    print(f"Processing player {idx + 1}/{len(players)}: {player}")
+    # print(f"Processing player {idx + 1}/{len(players)}: {player}")
 
     player_data = data[data['Player'] == player]
     X = player_data.drop(columns=['Player', 'Points']) # Don't want to check 'Player' and 'Points'
@@ -84,7 +85,8 @@ for idx, player in enumerate(players):
 best_models_df = pd.DataFrame(best_models)
 
 print("Processing complete. All players have been evaluated :)")
-print(best_models_df)
+print(f"\n")
+# print(best_models_df)
 
 # Function to predict the score of a new player
 def predict_score(player_name, player_stats, best_models_df):
@@ -112,6 +114,7 @@ def predict_score(player_name, player_stats, best_models_df):
 team_one_players = ['Stephen Curry', 'Mo Williams', 'Ben Simmons', 'Ja Morant', 'LaMelo Ball']
 team_two_players = ['Klay Thompson', 'LeBron James', "Shaquille O'Neal", 'Zion Williamson', 'Yao Ming']
 
+print("Team One:")
 team_one_score = 0
 for player in team_one_players:
     player_data = avg_player_stats[avg_player_stats['Player'] == player]
@@ -127,6 +130,8 @@ for player in team_one_players:
         print(f"Predicted score for {player}: {predicted_score}")
         team_one_score += predicted_score
 
+print(f"\n")
+print("Team Two:")
 team_two_score = 0
 for player in team_two_players:
     player_data = avg_player_stats[avg_player_stats['Player'] == player]
@@ -142,5 +147,11 @@ for player in team_two_players:
         print(f"Predicted score for {player}: {predicted_score}")
         team_two_score += predicted_score
 
-print(f"Team One Score: {team_one_score}")
-print(f"Team Two Score: {team_two_score}")
+print(f"\nFinal score: {team_one_score} - {team_two_score}")
+
+if (team_one_score < team_two_score):
+    print("Team Two Wins!")
+elif (team_one_score == team_two_score):
+    print("It's a Tie!")
+else:
+    print("Team One Wins!")
