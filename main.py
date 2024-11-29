@@ -109,6 +109,26 @@ def predict_score(player_name, player_stats, best_models_df):
     # Round to the nearest integer
     return round(predicted_score)
 
+# Ensure teams have unique players
+def validate_teams(team_one_players, team_two_players):
+    team_one_set = set(team_one_players)
+    team_two_set = set(team_two_players)
+
+    # Check for overlap between the two teams
+    overlapping_players = team_one_set.intersection(team_two_set)
+    if overlapping_players:
+        print(f"Error: The following players are in both teams: {', '.join(overlapping_players)}")
+        return False
+
+    # Check for duplicate players within each team
+    if len(team_one_players) != len(team_one_set):
+        print(f"Error: Team One has duplicate players.")
+        return False
+    if len(team_two_players) != len(team_two_set):
+        print(f"Error: Team Two has duplicate players.")
+        return False
+
+    return True
 
 # Make predictions for each player
 team_one_players = ['Stephen Curry', 'Mo Williams', 'Ben Simmons', 'Ja Morant', 'LaMelo Ball']
