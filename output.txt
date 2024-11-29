@@ -1,0 +1,21 @@
+Processing players...
+Processing complete. All players have been evaluated :)
+
+
+Team One:
+Predicted score for Stephen Curry: 27
+Predicted score for Mo Williams: 15
+Predicted score for Ben Simmons: 14
+Predicted score for Ja Morant: 22
+Predicted score for LaMelo Ball: 16
+
+
+Team Two:
+Predicted score for Klay Thompson: 20
+Predicted score for LeBron James: 26
+Predicted score for Shaquille O'Neal: 15
+Predicted score for Zion Williamson: 23
+Predicted score for Yao Ming: 20
+
+Final score: 94 - 104
+Team Two Wins!
