@@ -4,8 +4,4 @@ This is my final project for the course 'Introduction to Machine Learning' taugh
 
 ## Objective
 
-To be updated.
-
-## Data Collection
-
-To be updated.
+Predict the final score of a basketball game between two custom teams composed of NBA All-Star players from 2000 to 2023.
