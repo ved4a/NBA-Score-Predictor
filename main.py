@@ -134,44 +134,47 @@ def validate_teams(team_one_players, team_two_players):
 team_one_players = ['Stephen Curry', 'Mo Williams', 'Ben Simmons', 'Ja Morant', 'LaMelo Ball']
 team_two_players = ['Klay Thompson', 'LeBron James', "Shaquille O'Neal", 'Zion Williamson', 'Yao Ming']
 
-print("Team One:")
-team_one_score = 0
-for player in team_one_players:
-    player_data = avg_player_stats[avg_player_stats['Player'] == player]
-    if player_data.empty:
-        print(f"Stats not found for player: {player}")
-        continue
+if validate_teams(team_one_players, team_two_players):
+    print("Team One:")
+    team_one_score = 0
+    for player in team_one_players:
+        player_data = avg_player_stats[avg_player_stats['Player'] == player]
+        if player_data.empty:
+            print(f"Stats not found for player: {player}")
+            continue
 
-    # Align columns with training features
-    player_stats = player_data.drop(columns=['Player'])[X.columns].iloc[0].values.tolist()
+        # Align columns with training features
+        player_stats = player_data.drop(columns=['Player'])[X.columns].iloc[0].values.tolist()
 
-    predicted_score = predict_score(player, player_stats, best_models_df)
-    if predicted_score is not None:
-        print(f"Predicted score for {player}: {predicted_score}")
-        team_one_score += predicted_score
+        predicted_score = predict_score(player, player_stats, best_models_df)
+        if predicted_score is not None:
+            print(f"Predicted score for {player}: {predicted_score}")
+            team_one_score += predicted_score
 
-print(f"\n")
-print("Team Two:")
-team_two_score = 0
-for player in team_two_players:
-    player_data = avg_player_stats[avg_player_stats['Player'] == player]
-    if player_data.empty:
-        print(f"Stats not found for player: {player}")
-        continue
+    print(f"\n")
+    print("Team Two:")
+    team_two_score = 0
+    for player in team_two_players:
+        player_data = avg_player_stats[avg_player_stats['Player'] == player]
+        if player_data.empty:
+            print(f"Stats not found for player: {player}")
+            continue
 
-    # Align columns with training features
-    player_stats = player_data.drop(columns=['Player'])[X.columns].iloc[0].values.tolist()
+        # Align columns with training features
+        player_stats = player_data.drop(columns=['Player'])[X.columns].iloc[0].values.tolist()
 
-    predicted_score = predict_score(player, player_stats, best_models_df)
-    if predicted_score is not None:
-        print(f"Predicted score for {player}: {predicted_score}")
-        team_two_score += predicted_score
+        predicted_score = predict_score(player, player_stats, best_models_df)
+        if predicted_score is not None:
+            print(f"Predicted score for {player}: {predicted_score}")
+            team_two_score += predicted_score
 
-print(f"\nFinal score: {team_one_score} - {team_two_score}")
+    print(f"\nFinal score: {team_one_score} - {team_two_score}")
 
-if (team_one_score < team_two_score):
-    print("Team Two Wins!")
-elif (team_one_score == team_two_score):
-    print("It's a Tie!")
+    if (team_one_score < team_two_score):
+        print("Team Two Wins!")
+    elif (team_one_score == team_two_score):
+        print("It's a Tie!")
+    else:
+        print("Team One Wins!")
 else:
-    print("Team One Wins!")
+    print("Invalid team configuration. Please fix the teams and try again.")
